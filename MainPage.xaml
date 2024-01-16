@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EstilosXaml.MainPage">
+
+    <ContentPage.Resources>
+        <Style x:Key="estiloBase"
+               TargetType="View">
+            <Setter Property="HorizontalOptions" Value="Center"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Pink"/>
+            <Setter Property="WidthRequest" Value="200"/>
+            <Setter Property="FontAttributes" Value="Italic"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+    </ContentPage.Resources>
+
+    <StackLayout>
+        <StackLayout.Resources>
+            <Style x:Key="estiloEstiqueta"
+                   TargetType="Label"
+                   BasedOn="{StaticResource estiloBase}">
+                <Setter Property="FontSize" Value="24"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="Orange"/>
+            </Style>
+        </StackLayout.Resources>
+        <Label Text="Estas etiquetas demuestran el uso"
+               Style="{StaticResource etiquetaEstiloRojo}"/>
+        <Label Text="de los estilos"
+               Style="{StaticResource etiquetaEstiloVerde}"/>
+
+        <Label Text="Esta etiqueta es del ejemplo de herencia"
+               Style="{StaticResource estiloEstiqueta}"/>
+
+        <Button Text="Esta es la"/>
+        <Button Text="demostracion de"/>
+        <Button Text="estilos implicitos" TextColor="Purple" BackgroundColor="Blue"/>
+    </StackLayout>
+        
+</ContentPage>
